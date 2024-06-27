@@ -5,16 +5,18 @@ import string
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
+# Download required NLTK data
+nltk.download('punkt')
+nltk.download('stopwords')
+
 # Initialize PorterStemmer
 ps = PorterStemmer()
 
 # Load the pre-trained model and TF-IDF vectorizer
-
 with open('model.pkl', 'rb') as fil:
     model = pickle.load(fil)
 with open('vectorized.pkl', 'rb') as file:
     tfidf = pickle.load(file)
-
 
 # Define the text preprocessing function
 def update_text(text):
@@ -33,9 +35,7 @@ def update_text(text):
     y.clear()
     for i in text:
         y.append(ps.stem(i))
-
     return " ".join(y)
-
 
 # Streamlit application title
 st.title("Email/SMS Spam Classifier")
