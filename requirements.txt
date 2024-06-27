@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 streamlit
 nltk
+=======
+streamlit
+nltk
+>>>>>>> dd24a89f719d76669dc35dc52daaa4a4ff4fa0ff
 scikit-learn
